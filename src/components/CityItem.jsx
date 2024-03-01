@@ -8,7 +8,7 @@ const formatDate = (date) =>
   }).format(new Date(date));
 
 function CityItem({ city }) {
-  const { cityName, date, emoji, notes } = city;
+  const { cityName, date } = city;
   return (
     <li className={styles.cityItem}>
       {/* <span className={styles.emoji}>{emoji}</span> */}
