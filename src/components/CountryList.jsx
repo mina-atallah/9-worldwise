@@ -1,9 +1,13 @@
+import { useCities } from "../context/CitiesContext";
+
 import styles from "./CountryList.module.css";
 import Spinner from "./Spinner";
 import CountryItem from "./CountryItem";
 import Message from "./Message";
 
-function CountryList({ cities, isLoading }) {
+function CountryList() {
+  const { cities, isLoading } = useCities();
+
   // derived state
   const countries = cities.reduce((arr, city) => {
     /* 
