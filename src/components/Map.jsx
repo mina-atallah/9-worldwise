@@ -1,26 +1,33 @@
 import { useCities } from "../context/CitiesContext";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { useSearchParams } from "react-router-dom";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import styles from "./Map.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Map() {
-  const { cities, city } = useCities();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const { cities } = useCities();
+  const [searchParams] = useSearchParams();
   /*
     - the center prop expects an array holds the "lat" & the "lng"
     - it should be a state so when the postion changes we need the map to re-render
   */
   const [mapPosition, setMapPosition] = useState([40, 0]);
 
-  const lat = searchParams.get("lat");
-  const lng = searchParams.get("lng");
+  const mapLat = searchParams.get("lat");
+  const mapLng = searchParams.get("lng");
 
+  // to synchronize the mapPostion with any any city position so when we exist that city it's position still active on the map and doesn't jump to the default values
+  useEffect(
+    function () {
+      if (mapLat && mapLng) setMapPosition([mapLat, mapLng]);
+    },
+    [mapLat, mapLng]
+  );
   return (
     <div className={styles.mapContainer}>
       <MapContainer
         center={mapPosition}
-        zoom={13}
+        zoom={6}
         scrollWheelZoom={false}
         className={styles.map}
       >
@@ -39,9 +46,16 @@ function Map() {
             </Popup>
           </Marker>
         ))}
+        <ChangeCenter position={mapPosition} />
       </MapContainer>
     </div>
   );
 }
 
+function ChangeCenter({ position }) {
+  const map = useMap();
+  map.setView(position);
+
+  return null;
+}
 export default Map;
