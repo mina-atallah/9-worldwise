@@ -1,5 +1,5 @@
 import { useCities } from "../context/CitiesContext";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   MapContainer,
   TileLayer,
@@ -10,15 +10,15 @@ import {
 } from "react-leaflet";
 import { useEffect, useState } from "react";
 import { useGeolocation } from "../hooks/useGeolocation";
+import { useUrlPosition } from "../hooks/useUrlPosition";
 import Button from "./Button";
 import styles from "./Map.module.css";
 
 function Map() {
   const { cities } = useCities();
-  const [searchParams] = useSearchParams();
   /*
-    - the center prop expects an array holds the "lat" & the "lng"
-    - it should be a state so when the postion changes we need the map to re-render
+  - the center prop expects an array holds the "lat" & the "lng"
+  - it should be a state so when the postion changes we need the map to re-render
   */
   const [mapPosition, setMapPosition] = useState([40, 0]);
   const {
@@ -26,9 +26,7 @@ function Map() {
     position: geolocationPosition,
     getPosition,
   } = useGeolocation();
-
-  const mapLat = searchParams.get("lat");
-  const mapLng = searchParams.get("lng");
+  const [mapLat, mapLng] = useUrlPosition();
 
   // to synchronize the mapPostion with any any city position so when we exist that city it's position still active on the map and doesn't jump to the default values
   useEffect(
@@ -45,6 +43,7 @@ function Map() {
     },
     [geolocationPosition]
   );
+
   return (
     <div className={styles.mapContainer}>
       {!geolocationPosition && (
