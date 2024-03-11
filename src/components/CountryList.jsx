@@ -19,8 +19,6 @@ function CountryList() {
     else return arr;
   }, []);
 
-  console.log(countries);
-
   if (isLoading) return <Spinner />;
   if (!cities.length)
     return (
