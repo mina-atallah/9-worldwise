@@ -59,12 +59,25 @@ function CitiesProvider({ children }) {
       // updating the UI State
       setCities((cities) => [...cities, data]);
     } catch {
-      alert("There was an error loading data...");
+      alert("There was an error sending the city data...");
     } finally {
       setIsLoading(false);
     }
   }
 
+  async function deleteCity(id) {
+    try {
+      setIsLoading(true);
+      await fetch(`${BASE_URL}/cities/${id}`, {
+        method: "Delete",
+      });
+      setCities((cities) => cities.filter((city) => city.id !== id));
+    } catch {
+      alert("There was an error deleting the city...");
+    } finally {
+      setIsLoading(false);
+    }
+  }
   return (
     <CitiesContext.Provider
       value={{
@@ -73,6 +86,7 @@ function CitiesProvider({ children }) {
         currentCity,
         getCity,
         createCity,
+        deleteCity,
       }}
     >
       {children}

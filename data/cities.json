@@ -37,18 +37,6 @@
       "id": "98443197"
     },
     {
-      "id": "881b",
-      "cityName": "Algiers",
-      "country": "Algeria",
-      "date": "2024-03-11T06:44:21.496Z",
-      "emoji": "🇩🇿",
-      "position": {
-        "lat": "36.721273880045004",
-        "lng": "3.0761718750000004"
-      },
-      "notes": "great city"
-    },
-    {
       "id": "29df",
       "cityName": "Alexandria",
       "country": "Egypt",
@@ -71,42 +59,6 @@
         "lng": "35.50781250000001"
       },
       "notes": "lovely"
-    },
-    {
-      "id": "f208",
-      "cityName": "Al Mulayḩah",
-      "country": "Syrian Arab Republic (the)",
-      "date": "2024-03-11T07:08:24.359Z",
-      "emoji": "🇸🇾",
-      "position": {
-        "lat": "33.46810795527896",
-        "lng": "36.37573242187501"
-      },
-      "notes": "sadasd"
-    },
-    {
-      "id": "9024",
-      "cityName": "Coriano",
-      "country": "Italy",
-      "date": "2024-03-11T07:08:24.359Z",
-      "emoji": "🇮🇹",
-      "position": {
-        "lat": "43.95328204198018",
-        "lng": "12.557373046875"
-      },
-      "notes": "sadasd"
-    },
-    {
-      "id": "3a83",
-      "cityName": "Villeneuve-Saint-Georges",
-      "country": "France",
-      "date": "2024-03-11T07:11:25.640Z",
-      "emoji": "🇫🇷",
-      "position": {
-        "lat": "48.719961222646276",
-        "lng": "2.4609375000000004"
-      },
-      "notes": "dsfdsf"
     }
   ]
 }
