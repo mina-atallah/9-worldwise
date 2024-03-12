@@ -25,40 +25,40 @@
       "id": "17806751"
     },
     {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
+      "id": "4030",
+      "cityName": "Paris",
+      "country": "France",
+      "date": "2024-03-11T18:19:40.572Z",
+      "emoji": "🇫🇷",
       "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
+        "lat": "48.821332549646655",
+        "lng": "2.4389648437500004"
       },
-      "id": "98443197"
+      "notes": "Paris was amazing"
     },
     {
-      "id": "29df",
-      "cityName": "Alexandria",
-      "country": "Egypt",
-      "date": "2024-03-11T07:02:01.954Z",
-      "emoji": "🇪🇬",
+      "id": "94a4",
+      "cityName": "London",
+      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "date": "2024-03-11T18:19:56.391Z",
+      "emoji": "🇬🇧",
       "position": {
-        "lat": "31.175209828310845",
-        "lng": "29.904785156250004"
+        "lat": "51.440312757160115",
+        "lng": "-0.087890625"
       },
-      "notes": "The city of Alexander The Great ⚔"
+      "notes": "london was very cold"
     },
     {
-      "id": "26e4",
-      "cityName": "Beirut",
-      "country": "Lebanon",
-      "date": "2024-03-11T07:03:52.389Z",
-      "emoji": "🇱🇧",
+      "id": "9d01",
+      "cityName": "Dublin",
+      "country": "Ireland",
+      "date": "2024-03-11T18:20:09.228Z",
+      "emoji": "🇮🇪",
       "position": {
-        "lat": "33.87041555094183",
-        "lng": "35.50781250000001"
+        "lat": "53.31774904749089",
+        "lng": "-6.240234375"
       },
-      "notes": "lovely"
+      "notes": "WOW"
     }
   ]
 }
