@@ -44,7 +44,7 @@ function AuthProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={(user, isAuthenticated, login, logout)}>
+    <AuthContext.Provider value={{ user, isAuthenticated, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
@@ -54,6 +54,7 @@ function useAuth() {
   const context = useContext(AuthContext);
   if (context === undefined)
     throw new Error("Context was outside AuthProvider");
+  return context;
 }
 
 export { AuthProvider, useAuth };
